@@ -17,7 +17,7 @@ public class Chapter1Problem9
     System.out.println("IT-2650 Java Programming");
     System.out.println("Student Name: Michael Sloan");
     System.out.println("Homework Assignment: Chapter 1, Problem 9");
-    System.out.println("_________________________________ ");
+    System.out.println("_________________________________");
     System.out.println("");
 
     Scanner keyboard = new Scanner(System.in);
@@ -47,7 +47,7 @@ public class Chapter1Problem9
       }
     }
     idealWeight = 110 + ((heightFeet - 5) * 12 + heightInches) * 5;
-    System.out.println("_________________________________ ");
+    System.out.println("_________________________________");
     System.out.println("Based on your Height your ideal body weight is:");
     System.out.println(idealWeight + " pounds");
   }
