@@ -25,9 +25,7 @@ public class Chapter1Problem6
     Scanner keyboard = new Scanner(System.in);
     DecimalFormat df = new DecimalFormat("#,###,##0.00");
 
-    double gearSize = 0;
-    double cadence = 0;
-    double bikeSpeed = 0;
+    double gearSize, cadence, bikeSpeed;
 
     System.out.println("Enter your Gear Size in inches:");
     gearSize = keyboard.nextDouble();
