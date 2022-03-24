@@ -21,8 +21,7 @@ public class Chapter1Problem9
     
     Scanner keyboard = new Scanner(System.in);
     
-    int heightFeet, heightInches;
-    int idealWeight = 110;
+    int heightFeet, heightInches, idealWeight;
     
     System.out.println("Please enter your Height as two numbers, Feet followed by Inches");
     System.out.println("--------------------------------");
@@ -30,6 +29,7 @@ public class Chapter1Problem9
     heightFeet = keyboard.nextInt();
     System.out.println(" Enter the Inches portion of your Height as a whole number:");
     heightInches = keyboard.nextInt();
+    idealWeight = 110 + ((heightFeet - 5) * 12 + heightInches) * 5;   
     System.out.println(" _________________________________ ");
     System.out.println("Based on your Height your ideal body weight is:");
     System.out.println(idealWeight + " pounds");
