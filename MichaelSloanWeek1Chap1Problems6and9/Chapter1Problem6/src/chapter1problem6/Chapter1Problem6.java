@@ -3,7 +3,7 @@
  * Instructor: Martin P. Walsh
  * Student Name: Michael Sloan
  * Homework Assignment: Chap 1 - Problem 6
- * Purpose of Assignment: 
+ * Purpose of Assignment: Create an application to calculate speed (mph) of bike based on gear size and cadence.
  */
 package chapter1problem6;
 
