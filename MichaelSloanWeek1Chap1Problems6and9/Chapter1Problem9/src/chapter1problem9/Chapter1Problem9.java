@@ -11,18 +11,19 @@ import java.util.Scanner;
 
 public class Chapter1Problem9
 {
+
   public static void main(String[] args)
   {
     System.out.println("IT-2650 Java Programming");
     System.out.println("Student Name: Michael Sloan");
     System.out.println("Homework Assignment: Chapter 1, Problem 9");
-    System.out.println(" _________________________________ ");
+    System.out.println("_________________________________ ");
     System.out.println("");
-    
+
     Scanner keyboard = new Scanner(System.in);
-    
+
     int heightFeet, heightInches, idealWeight;
-    
+
     System.out.println("Please enter your Height as two numbers, Feet followed by Inches");
     System.out.println("--------------------------------");
     System.out.println("Enter the Feet portion of your Height as a whole number:");
@@ -45,12 +46,10 @@ public class Chapter1Problem9
         heightInches = 0;
       }
     }
-    idealWeight = 110 + ((heightFeet - 5) * 12 + heightInches) * 5;   
-    System.out.println(" _________________________________ ");
+    idealWeight = 110 + ((heightFeet - 5) * 12 + heightInches) * 5;
+    System.out.println("_________________________________ ");
     System.out.println("Based on your Height your ideal body weight is:");
     System.out.println(idealWeight + " pounds");
-    
-    
   }
-  
+
 }
