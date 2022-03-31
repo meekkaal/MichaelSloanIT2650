@@ -28,6 +28,21 @@ public class Chapter2Problem10
     System.out.println("");
 
     Scanner keyboard = new Scanner(System.in);
+    
+    String[] items;
+    
+    System.out.println("Name of item 1:");
+    System.out.println("Quantity of item 1:");
+    System.out.println("Price of item 1:");
+    
+    System.out.println("Name of item 2:");
+    System.out.println("Quantity of item 2:");
+    System.out.println("Price of item 2:");
+    
+    System.out.println("Name of item 3:");
+    System.out.println("Quantity of item 3:");
+    System.out.println("Price of item 3:");
+    
   }
   
 }

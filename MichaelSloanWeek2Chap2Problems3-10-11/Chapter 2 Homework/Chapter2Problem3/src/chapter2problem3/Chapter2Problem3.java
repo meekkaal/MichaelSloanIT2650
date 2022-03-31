@@ -9,16 +9,8 @@ package chapter2problem3;
 
 import java.util.Scanner;
 
-/**
- *
- * @author torna
- */
 public class Chapter2Problem3
 {
-
-  /**
-   * @param args the command line arguments
-   */
   public static void main(String[] args)
   {
     System.out.println("IT-2650 Java Programming");
@@ -37,10 +29,11 @@ public class Chapter2Problem3
     secondNumber = keyboard.nextInt();
     
     sum = firstNumber + secondNumber;
-    System.out.println("Adding " + firstNumber + " + " + secondNumber + " equals " + sum);
     difference = firstNumber - secondNumber;
-    System.out.println("Subtracting " + firstNumber + " - " + secondNumber + " equals " + difference);
     product = firstNumber * secondNumber;
+    
+    System.out.println("Adding " + firstNumber + " + " + secondNumber + " equals " + sum);
+    System.out.println("Subtracting " + firstNumber + " - " + secondNumber + " equals " + difference);
     System.out.println("Multiplying " + firstNumber + " * " + secondNumber + " equals " + product);
   }
   
