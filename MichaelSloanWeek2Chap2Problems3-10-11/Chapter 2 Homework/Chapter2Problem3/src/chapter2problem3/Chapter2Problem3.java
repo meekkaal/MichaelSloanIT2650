@@ -3,7 +3,7 @@
  * Instructor: Martin P. Walsh
  * Student Name: Michael Sloan
  * Homework Assignment: Chap 2 - Problem 3
- * Purpose of Assignment: 
+ * Purpose of Assignment: Application that outputs sum, difference, and product of two numbers.
  */
 package chapter2problem3;
 
