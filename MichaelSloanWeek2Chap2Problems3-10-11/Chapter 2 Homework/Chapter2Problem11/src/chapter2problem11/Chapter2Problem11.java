@@ -49,9 +49,7 @@ public class Chapter2Problem11
     
     int totalScore = exerciseScore1 + exerciseScore2 + exerciseScore3;
     int totalPossible = possibleExerciseScore1 + possibleExerciseScore2 + possibleExerciseScore3;
-    
-    String test = percent.format((double) totalScore / (double) totalPossible);
-    
+        
     System.out.printf("%-20s%-20s%-20s %n", "Exercise", "Score", "Total Possible");
     System.out.printf("%-20s%-20d%-20d %n", exerciseName1, exerciseScore1, possibleExerciseScore1);
     System.out.printf("%-20s%-20d%-20d %n", exerciseName2, exerciseScore2, possibleExerciseScore2);
