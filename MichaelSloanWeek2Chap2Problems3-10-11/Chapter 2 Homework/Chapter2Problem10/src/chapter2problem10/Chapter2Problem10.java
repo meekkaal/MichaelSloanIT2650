@@ -21,11 +21,9 @@ public class Chapter2Problem10
     System.out.println("");
 
     Scanner keyboard = new Scanner(System.in);
-    NumberFormat moneyFormatter = NumberFormat.getCurrencyInstance();
-    NumberFormat percentFormatter = NumberFormat.getPercentInstance();
-    percentFormatter.setMaximumFractionDigits(2);
+    NumberFormat currency = NumberFormat.getCurrencyInstance();
     
-    double SALES_TAX = 0.0625;
+    final double SALES_TAX = 0.0625;
         
     System.out.println("Name of item 1:");
     String item1Name = keyboard.nextLine();
@@ -60,13 +58,13 @@ public class Chapter2Problem10
         
     System.out.println("------------- Invoice ----------------");
     System.out.printf("%-30s%-10s%10s%10s %n", "Item", "Quantity", "Price", "Total");
-    System.out.printf("%-30s%-10s%10s%10s %n", item1Name, item1Quantity, moneyFormatter.format(item1Price), moneyFormatter.format(item1Total));
-    System.out.printf("%-30s%-10s%10s%10s %n", item2Name, item2Quantity, moneyFormatter.format(item2Price), moneyFormatter.format(item2Total));
-    System.out.printf("%-30s%-10s%10s%10s %n%n", item3Name, item3Quantity, moneyFormatter.format(item3Price), moneyFormatter.format(item3Total));
+    System.out.printf("%-30s%-10s%10s%10s %n", item1Name, item1Quantity, currency.format(item1Price), currency.format(item1Total));
+    System.out.printf("%-30s%-10s%10s%10s %n", item2Name, item2Quantity, currency.format(item2Price), currency.format(item2Total));
+    System.out.printf("%-30s%-10s%10s%10s %n%n", item3Name, item3Quantity, currency.format(item3Price), currency.format(item3Total));
     
-    System.out.printf("%-50s%10s %n", "SubTotal", moneyFormatter.format(subTotal));
-    System.out.printf("%-50s%10s %n", "6.25 Sales Tax", moneyFormatter.format(calculatedTax));
-    System.out.printf("%-50s%10s %n", "Total", moneyFormatter.format(total));
+    System.out.printf("%-50s%10s %n", "SubTotal", currency.format(subTotal));
+    System.out.printf("%-50s%10s %n", "6.25 Sales Tax", currency.format(calculatedTax));
+    System.out.printf("%-50s%10s %n", "Total", currency.format(total));
   }
   
 }
