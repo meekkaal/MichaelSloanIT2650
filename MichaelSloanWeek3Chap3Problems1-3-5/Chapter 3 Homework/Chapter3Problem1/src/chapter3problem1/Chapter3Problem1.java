@@ -19,7 +19,11 @@ public class Chapter3Problem1
    */
   public static void main(String[] args)
   {
-    // TODO code application logic here
+    System.out.println("IT-2650 Java Programming");
+    System.out.println("Student Name: Michael Sloan");
+    System.out.println("Homework Assignment: Chapter 3, Problem 1");
+    System.out.println("_________________________________");
+    System.out.println("");
   }
   
 }
