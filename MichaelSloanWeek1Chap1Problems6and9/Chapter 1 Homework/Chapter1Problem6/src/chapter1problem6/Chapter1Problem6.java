@@ -9,7 +9,6 @@ package chapter1problem6;
 
 import java.util.Scanner;
 import java.text.DecimalFormat;
-import java.lang.Math;
 
 public class Chapter1Problem6
 {
