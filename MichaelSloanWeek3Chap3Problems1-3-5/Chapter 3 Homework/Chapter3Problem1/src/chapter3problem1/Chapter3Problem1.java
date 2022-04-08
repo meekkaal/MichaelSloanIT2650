@@ -42,9 +42,7 @@ public class Chapter3Problem1
       System.out.println("Current guess: " + guess);
     } while ((guess - newGuess) / guess > 0.01 && Math.pow(guess, 2) != number);
     
-    System.out.printf("The estimated square root of %d is: %6.2f%n", number, guess);
-    
-    
+    System.out.printf("The estimated square root of %d is: %6.2f%n", number, guess);  
   }
   
 }
