@@ -3,9 +3,11 @@
  * Instructor: Martin P. Walsh
  * Student Name: Michael Sloan
  * Homework Assignment: Chap 3 - Problem 3
- * Purpose of Assignment:
+ * Purpose of Assignment: Compute the height of a person.
  */
 package chapter3problem3;
+
+import java.util.Scanner;
 
 /**
  *
@@ -24,6 +26,50 @@ public class Chapter3Problem3
     System.out.println("Homework Assignment: Chapter 2, Problem 3");
     System.out.println("_________________________________");
     System.out.println("");
+
+    Scanner keyboard = new Scanner(System.in);
+
+    boolean running = true;
+
+    while (running)
+    {
+      int childHeight = 0;
+
+      System.out.println("Enter the gender of your future child. Use 1 for female, 0 for male.");
+      int gender = keyboard.nextInt();
+      if (gender != 0 || gender != 1)
+      {
+        continue;
+      }
+      System.out.println("Enter the height in feet then the height in inches of the mom.");
+      int momFeet = keyboard.nextInt();
+      int momInches = keyboard.nextInt();
+      int momHeight = (momFeet * 12) + momInches;
+      System.out.println("Enter the height in feet then the height in inches of the dad.");
+      int dadFeet = keyboard.nextInt();
+      int dadInches = keyboard.nextInt();
+      int dadHeight = (dadFeet * 12) + dadInches;
+
+      if (gender == 0)
+      {
+        childHeight = ((momHeight * 13 / 12) + dadHeight) / 2;
+      } else if (gender == 1)
+      {
+        childHeight = ((dadHeight * 12 / 13) + momHeight) / 2;
+      } else
+      {
+        return;
+      }
+
+      System.out.println("You future child is estimated to grow to " + (childHeight / 12) + " feet and " + (childHeight % 12) + " inches.");
+
+      System.out.println("Enter 'Y' to run again, anything else to exit.");
+      if (!keyboard.next().equalsIgnoreCase("Y"))
+      {
+        running = false;
+      }
+    }
+
   }
-  
+
 }
