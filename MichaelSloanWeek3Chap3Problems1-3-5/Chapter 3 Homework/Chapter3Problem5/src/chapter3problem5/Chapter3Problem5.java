@@ -7,6 +7,8 @@
  */
 package chapter3problem5;
 
+import java.math.RoundingMode;
+import java.text.NumberFormat;
 import java.util.Scanner;
 
 /**
@@ -28,6 +30,7 @@ public class Chapter3Problem5
     System.out.println("");
     
     Scanner keyboard = new Scanner(System.in);
+    NumberFormat currency = NumberFormat.getCurrencyInstance();
     
     System.out.println("Enter the House Purchase Cost");
     int purchaseCost = keyboard.nextInt();
@@ -36,20 +39,35 @@ public class Chapter3Problem5
     int downPayment = keyboard.nextInt();
     
     System.out.println("Enter the Annual Interest Rate as a whole number");
-    double interestRate = (keyboard.nextDouble() / 100) / 12;
+    double monthlyInterestRate = (keyboard.nextDouble() / 12) / 100;
     
     System.out.println("Enter the Term in Months");
     int loanTerm = keyboard.nextInt();
     
-    int loanAmount = purchaseCost - downPayment;
-    System.out.println("The Monthly Payment is: " + ((loanAmount * interestRate)/(1 - Math.pow(1 + interestRate, loanTerm))));
+    double loanAmount = purchaseCost - downPayment;
+    double monthlyPayment = (loanAmount * monthlyInterestRate/(1 - 1 / Math.pow(1 + monthlyInterestRate, loanTerm)));
+    System.out.println("The Monthly Payment is: " + currency.format(monthlyPayment));
     
     System.out.printf("%-15s%-15s%-15s%-15s%-15s %n", "Month", "Monthly", "Interest", "Principal", "Remaining");
     System.out.printf("%-15s%-15s%-15s%-15s%-15s  %n", "Number", "Pymt", "Paid", "Paid", "Balance");
-    for (int i = 0; i < 360; i++)
+    
+    double totalInterestPaid = 0;
+    double totalPrincipalPaid = 0;
+    int totalMonths = 0;
+    
+    for (int i = 1; i <= 360; i++)
     {
-      //System.out.printf("%-15s%-15s%-15s%-15s%-15s  %n", "Number", "Pymt", "Paid", "Paid", "Balance");
+      double monthlyInterestPaid = loanAmount * monthlyInterestRate;
+      double monthlyPrincipalPaid = monthlyPayment - monthlyInterestPaid;
+      loanAmount -= monthlyPrincipalPaid;
+      totalInterestPaid += monthlyInterestPaid;
+      totalPrincipalPaid += monthlyPrincipalPaid;
+      System.out.printf("%-15s%-15s%-15s%-15s%-15s  %n", i, currency.format(monthlyPayment), currency.format(monthlyInterestPaid), currency.format(monthlyPrincipalPaid), currency.format(Math.abs(loanAmount)));
+      totalMonths++;
     }
+    
+    System.out.println("It will take you " + totalMonths + " months to pay off the house.");
+    System.out.println("You will have paid " + currency.format(totalInterestPaid) + " in interest and " + currency.format(totalPrincipalPaid) + " in principal." );
   }
   
 }
