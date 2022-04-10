@@ -63,11 +63,11 @@ public class Chapter3Problem5
       totalInterestPaid += monthlyInterestPaid;
       totalPrincipalPaid += monthlyPrincipalPaid;
       System.out.printf("%-15s%-15s%-15s%-15s%-15s  %n",
-              i,
-              currency.format(monthlyPayment),
-              currency.format(monthlyInterestPaid),
-              currency.format(monthlyPrincipalPaid),
-              currency.format(Math.abs(loanAmount)));
+                        i,
+                        currency.format(monthlyPayment),
+                        currency.format(monthlyInterestPaid),
+                        currency.format(monthlyPrincipalPaid),
+                        currency.format(Math.abs(loanAmount)));
       totalMonths++;
     }
 
