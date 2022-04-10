@@ -39,7 +39,7 @@ public class Chapter3Problem3
       int gender = keyboard.nextInt();
       if (gender != 0 || gender != 1)
       {
-        continue;
+        //continue;
       }
       System.out.println("Enter the height in feet then the height in inches of the mom.");
       int momFeet = keyboard.nextInt();
