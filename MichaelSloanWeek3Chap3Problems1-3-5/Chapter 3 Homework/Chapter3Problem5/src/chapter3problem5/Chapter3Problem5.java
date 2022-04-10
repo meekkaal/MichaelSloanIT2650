@@ -27,16 +27,29 @@ public class Chapter3Problem5
     System.out.println("_________________________________");
     System.out.println("");
     
+    Scanner keyboard = new Scanner(System.in);
+    
     System.out.println("Enter the House Purchase Cost");
+    int purchaseCost = keyboard.nextInt();
     
     System.out.println("Enter the Down Payment");
+    int downPayment = keyboard.nextInt();
     
     System.out.println("Enter the Annual Interest Rate as a whole number");
+    double interestRate = (keyboard.nextDouble() / 100) / 12;
     
     System.out.println("Enter the Term in Months");
+    int loanTerm = keyboard.nextInt();
     
-    System.out.println("The Monthly Payment is: ");
+    int loanAmount = purchaseCost - downPayment;
+    System.out.println("The Monthly Payment is: " + ((loanAmount * interestRate)/(1 - Math.pow(1 + interestRate, loanTerm))));
     
+    System.out.printf("%-15s%-15s%-15s%-15s%-15s %n", "Month", "Monthly", "Interest", "Principal", "Remaining");
+    System.out.printf("%-15s%-15s%-15s%-15s%-15s  %n", "Number", "Pymt", "Paid", "Paid", "Balance");
+    for (int i = 0; i < 360; i++)
+    {
+      //System.out.printf("%-15s%-15s%-15s%-15s%-15s  %n", "Number", "Pymt", "Paid", "Paid", "Balance");
+    }
   }
   
 }
