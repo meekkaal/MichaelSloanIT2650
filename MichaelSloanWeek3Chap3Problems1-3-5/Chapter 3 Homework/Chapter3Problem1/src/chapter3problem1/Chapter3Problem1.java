@@ -26,23 +26,23 @@ public class Chapter3Problem1
     System.out.println("Homework Assignment: Chapter 3, Problem 1");
     System.out.println("_________________________________");
     System.out.println("");
-    
+
     Scanner keyboard = new Scanner(System.in);
-    
+
     System.out.println("This program estimates square roots.");
     System.out.println("Enter an integer to estimate the square root of:");
     int number = keyboard.nextInt();
     double guess = number / 2.0;
     double newGuess;
-    
+
     do
     {
       newGuess = number / guess;
       guess = (guess + newGuess) / 2.0;
       System.out.println("Current guess: " + guess);
     } while ((guess - newGuess) / guess > 0.01 && Math.pow(guess, 2) != number);
-    
-    System.out.printf("The estimated square root of %d is: %6.2f%n", number, guess);  
+
+    System.out.printf("The estimated square root of %d is: %4.2f%n", number, guess);
   }
-  
+
 }

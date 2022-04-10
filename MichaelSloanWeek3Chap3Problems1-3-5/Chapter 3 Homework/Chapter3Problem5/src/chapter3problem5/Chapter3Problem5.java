@@ -7,7 +7,6 @@
  */
 package chapter3problem5;
 
-import java.math.RoundingMode;
 import java.text.NumberFormat;
 import java.util.Scanner;
 
@@ -73,8 +72,8 @@ public class Chapter3Problem5
 
     System.out.println("It will take you " + totalMonths + " months to pay off the house.");
     System.out.println("You will have paid "
-            + currency.format(totalInterestPaid) + " in interest and "
-            + currency.format(totalPrincipalPaid) + " in principal.");
+                       + currency.format(totalInterestPaid) + " in interest and "
+                       + currency.format(totalPrincipalPaid) + " in principal.");
   }
 
 }
