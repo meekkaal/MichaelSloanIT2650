@@ -27,12 +27,11 @@ public class Chapter4Problem6
     System.out.println("Homework Assignment: Chapter 4, Problem 6");
     System.out.println("_________________________________");
     System.out.println("");
-    
+
     Scanner keyboard = new Scanner(System.in);
     DecimalFormat gradeFormat = new DecimalFormat("##0.00");
     StudentRecord record = new StudentRecord();
-    
-    
+
     System.out.println("Enter the student't score on the first quiz (10 Possible Points):");
     int quizScore1 = keyboard.nextInt();
     System.out.println("Enter the student't score on the second quiz (10 Possible Points):");
@@ -43,18 +42,17 @@ public class Chapter4Problem6
     int midtermScore = keyboard.nextInt();
     System.out.println("Enter the student't score on the final (100 Possible Points):");
     int finalScore = keyboard.nextInt();
-    
+
     record.setQuizScores(quizScore1, quizScore2, quizScore3);
     record.setTestScores(midtermScore, finalScore);
-    
+
     record.calculateNumericGrade();
     record.calculateLetterGrade();
-    
-    
+
     System.out.println("Student Record: " + record.getScores()
-                       + " Overall numeric grade: " + gradeFormat.format(record.getTotalScore())
-                       + " Letter Grade: " + record.getLetterGrade()
-            );
+            + " Overall numeric grade: " + gradeFormat.format(record.getTotalScore())
+            + " Letter Grade: " + record.getLetterGrade()
+    );
   }
-  
+
 }
