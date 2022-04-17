@@ -8,6 +8,7 @@ import java.text.DecimalFormat;
  */
 public class StudentRecord
 {
+
   DecimalFormat scoreFormat = new DecimalFormat("0.#");
 
   private double quizScore1;
@@ -19,19 +20,21 @@ public class StudentRecord
   private double overallScore;
 
   private String finalLetterGrade;
-  
+
   public String getScores()
   {
-    return "Quiz 1: " + scoreFormat.format(quizScore1) 
-           + ", Quiz 2: " + scoreFormat.format(quizScore2)
-           + ", Quiz 3: " + scoreFormat.format(quizScore3)
-           + ", Midterm: " + scoreFormat.format(midtermScore)
-           + ", Final: " + scoreFormat.format(finalScore);
+    return "Quiz 1: " + scoreFormat.format(quizScore1)
+            + ", Quiz 2: " + scoreFormat.format(quizScore2)
+            + ", Quiz 3: " + scoreFormat.format(quizScore3)
+            + ", Midterm: " + scoreFormat.format(midtermScore)
+            + ", Final: " + scoreFormat.format(finalScore) + ".";
   }
+
   public double getTotalScore()
   {
     return overallScore;
   }
+
   public String getLetterGrade()
   {
     return finalLetterGrade;
@@ -68,13 +71,13 @@ public class StudentRecord
   {
     double quizAverage = (quizScore1 + quizScore2 + quizScore3) / 30;
     double quizWeighted = quizAverage * .25;
-    
+
     double midtermAverage = midtermScore / 100;
     double midTermWeighted = midtermAverage * .35;
-    
+
     double finalAverage = finalScore / 100;
     double finalWeighted = finalAverage * .40;
-    
+
     overallScore = (quizWeighted + midTermWeighted + finalWeighted) * 100;
   }
 
@@ -83,20 +86,16 @@ public class StudentRecord
     if (overallScore >= 90)
     {
       finalLetterGrade = "A";
-    }
-    else if (overallScore >= 80)
+    } else if (overallScore >= 80)
     {
       finalLetterGrade = "B";
-    }
-    else if (overallScore >= 70)
+    } else if (overallScore >= 70)
     {
       finalLetterGrade = "C";
-    }
-    else if (overallScore >= 60)
+    } else if (overallScore >= 60)
     {
       finalLetterGrade = "D";
-    }
-    else
+    } else
     {
       finalLetterGrade = "F";
     }
@@ -105,7 +104,13 @@ public class StudentRecord
   @Override
   public String toString()
   {
-    return "Quiz 1: " + ", Quiz 2: " + ", Quiz 3: " + ", Midterm: " + ", Final: ";
+    return "Quiz 1: " + scoreFormat.format(quizScore1)
+            + ", Quiz 2: " + scoreFormat.format(quizScore2)
+            + ", Quiz 3: " + scoreFormat.format(quizScore3)
+            + ", Midterm: " + scoreFormat.format(midtermScore)
+            + ", Final: " + scoreFormat.format(finalScore) + "."
+            + " Overall numeric grade: " + overallScore
+            + ", Letter Grade: " + finalLetterGrade;
   }
 
   public boolean equals(StudentRecord record)
