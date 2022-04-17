@@ -13,6 +13,7 @@ package chapter5problem9;
  * following command prompt command: “C:\(SRC folder)> javadoc –author –version *.java “ (Note – you must be in the Project’s SRC
  * folder)
  *
+ * @version 1.0 Spring 2022
  * @author Michael Sloan
  */
 public class Chapter5Problem9
@@ -25,9 +26,9 @@ public class Chapter5Problem9
   /**
    * Chapter5Question9 constructor (originally was Person constructor.)
    *
-   * @param initialName
-   * @param birthDate
-   * @param deathDate
+   * @param initialName Initial name of person
+   * @param birthDate Birth date of person
+   * @param deathDate Death date of person
    */
   public Chapter5Problem9(String initialName, Date birthDate, Date deathDate)
   {
@@ -52,7 +53,7 @@ public class Chapter5Problem9
   /**
    * Chapter5Question9 copy constructor.
    *
-   * @param original
+   * @param original original class object used for new copy
    */
   public Chapter5Problem9(Chapter5Problem9 original)
   {
@@ -75,10 +76,11 @@ public class Chapter5Problem9
   }
 
   /**
+   * Sets a new name, birth, and death date.
    *
-   * @param newName
-   * @param birthDate
-   * @param deathDate
+   * @param newName New name of person
+   * @param birthDate New birth date of person
+   * @param deathDate New death date of person
    */
   public void set(String newName, Date birthDate, Date deathDate)
   {
@@ -101,8 +103,9 @@ public class Chapter5Problem9
   }
 
   /**
+   * Return's the person's details encoded in a String.
    *
-   * @return
+   * @return String containing person's details
    */
   public String toString()
   {
@@ -120,8 +123,8 @@ public class Chapter5Problem9
 
   /**
    *
-   * @param otherPerson
-   * @return
+   * @param otherPerson instance of person used for comparison
+   * @return Boolean indicating equality of two persons
    */
   public boolean equals(Chapter5Problem9 otherPerson)
   {
@@ -156,7 +159,7 @@ public class Chapter5Problem9
   /**
    * Precondition: newDate is a consistent date of birth. Postcondition: Date of birth of the calling object is newDate.
    *
-   * @param newDate
+   * @param newDate New birth date to be assigned to a person
    */
   public void setBirthDate(Date newDate)
   {
@@ -173,7 +176,7 @@ public class Chapter5Problem9
   /**
    * Precondition: newDate is a consistent date of death. Postcondition: Date of death of the calling object is newDate.
    *
-   * @param newDate
+   * @param newDate New death date to be assigned to a person
    */
   public void setDeathDate(Date newDate)
   {
@@ -194,8 +197,9 @@ public class Chapter5Problem9
   }
 
   /**
+   * Change the person's name.
    *
-   * @param newName
+   * @param newName New name to be assigned to a person
    */
   public void setName(String newName)
   {
@@ -206,7 +210,7 @@ public class Chapter5Problem9
    * Precondition: The date of birth has been set, and changing the year part of the date of birth will give a consistent date of
    * birth. Postcondition: The year of birth is (changed to) newYear.
    *
-   * @param newYear
+   * @param newYear New birth year for person
    */
   public void setBirthYear(int newYear)
   {
@@ -227,7 +231,7 @@ public class Chapter5Problem9
    * Precondition: The date of death has been set, and changing the year part of the date of death will give a consistent date of
    * death. Postcondition: The year of death is (changed to) newYear.
    *
-   * @param newYear
+   * @param newYear new death year for person
    */
   public void setDeathYear(int newYear)
   {
@@ -245,8 +249,9 @@ public class Chapter5Problem9
   }
 
   /**
+   * Retrieves the person's name.
    *
-   * @return
+   * @return String of person's name
    */
   public String getName()
   {
@@ -254,8 +259,9 @@ public class Chapter5Problem9
   }
 
   /**
+   * Retrieves the person's birth date.
    *
-   * @return
+   * @return Date of person's birth date
    */
   public Date getBirthDate()
   {
@@ -263,8 +269,9 @@ public class Chapter5Problem9
   }
 
   /**
+   * Retrieves the person's death date.
    *
-   * @return
+   * @return Date of person's death date.
    */
   public Date getDeathDate()
   {
