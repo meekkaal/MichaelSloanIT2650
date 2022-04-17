@@ -40,7 +40,7 @@ public final class SpeciesRecord
     this.growthRate = growthRate;
     System.out.println("Record is: " + this);
   }
-  
+
   public SpeciesRecord(SpeciesRecord record)
   {
     name = record.name;
