@@ -7,6 +7,7 @@
  */
 package chapter4problem10;
 
+import java.text.DecimalFormat;
 import java.util.Scanner;
 
 /**
@@ -27,6 +28,8 @@ public class Chapter4Problem10
     System.out.println("_________________________________");
     System.out.println("");
 
+    DecimalFormat dose = new DecimalFormat("0.0000");
+
     Pet usersPet = new Pet("Jane Doe");
     System.out.println("My records on your pet are incomplete.");
     System.out.println("Here is what they currently say:");
@@ -44,6 +47,8 @@ public class Chapter4Problem10
     usersPet.set(name, age, weight, type);
     System.out.println("My records now say:");
     System.out.println(usersPet);
+    System.out.println("Dose of carprofen: " + dose.format(usersPet.carprofen()));
+    System.out.println("Dose of acepromazine: " + dose.format(usersPet.acepromazine()));
   }
 
 }
