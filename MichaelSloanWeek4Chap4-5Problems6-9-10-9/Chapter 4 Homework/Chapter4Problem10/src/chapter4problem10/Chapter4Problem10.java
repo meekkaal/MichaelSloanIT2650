@@ -3,7 +3,7 @@
  * Instructor: Martin P. Walsh
  * Student Name: Michael Sloan
  * Homework Assignment: Chap 4 - Problem 10
- * Purpose of Assignment:
+ * Purpose of Assignment: Application to store pet info and calculate medicine dosage.
  */
 package chapter4problem10;
 
