@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package chapter5problem9;
 
 import java.util.Scanner;
@@ -17,6 +13,10 @@ public class Date
   private int day;
   private int year; //a four digit number.
 
+  /**
+   * Default constructor.
+   *
+   */
   public Date()
   {
     month = "January";
@@ -24,21 +24,41 @@ public class Date
     year = 1000;
   }
 
+  /**
+   *
+   * @param monthInt Number of the month
+   * @param day Number of the day
+   * @param year Number of the year
+   */
   public Date(int monthInt, int day, int year)
   {
     setDate(monthInt, day, year);
   }
 
+  /**
+   *
+   * @param monthString String of the month
+   * @param day Number of the day
+   * @param year Number of the year
+   */
   public Date(String monthString, int day, int year)
   {
     setDate(monthString, day, year);
   }
 
+  /**
+   *
+   * @param year number of the year
+   */
   public Date(int year)
   {
     setDate(1, 1, year);
   }
 
+  /**
+   *
+   * @param aDate constructor using passed in Date
+   */
   public Date(Date aDate)
   {
     if (aDate == null)//Not a real date.
@@ -52,6 +72,12 @@ public class Date
     year = aDate.year;
   }
 
+  /**
+   *
+   * @param monthInt numeric value of month
+   * @param day numeric value of day in month
+   * @param year numeric value of year
+   */
   public void setDate(int monthInt, int day, int year)
   {
     if (dateOK(monthInt, day, year))
@@ -66,6 +92,13 @@ public class Date
     }
   }
 
+  /**
+   * Sets a date based on month, day, and year.
+   *
+   * @param monthString Name of month
+   * @param day numeric value of day
+   * @param year numeric value of year
+   */
   public void setDate(String monthString, int day, int year)
   {
     if (dateOK(monthString, day, year))
@@ -80,11 +113,21 @@ public class Date
     }
   }
 
+  /**
+   * Sets a date based on year
+   *
+   * @param year numeric value of year
+   */
   public void setDate(int year)
   {
     setDate(1, 1, year);
   }
 
+  /**
+   * Sets a new year for a date.
+   *
+   * @param year numeric value of year
+   */
   public void setYear(int year)
   {
     if ((year < 1000) || (year > 9999))
@@ -97,6 +140,11 @@ public class Date
     }
   }
 
+  /**
+   * Sets a new month number for a date.
+   *
+   * @param monthNumber numeric value of month
+   */
   public void setMonth(int monthNumber)
   {
     if ((monthNumber <= 0) || (monthNumber > 12))
@@ -109,6 +157,11 @@ public class Date
     }
   }
 
+  /**
+   * Sets the day.
+   *
+   * @param day numeric value of day
+   */
   public void setDay(int day)
   {
     if ((day <= 0) || (day > 31))
@@ -121,6 +174,11 @@ public class Date
     }
   }
 
+  /**
+   * Retrieves the month number of a date.
+   *
+   * @return integer of month number
+   */
   public int getMonth()
   {
     if (month.equals("January"))
@@ -167,21 +225,39 @@ public class Date
     }
   }
 
+  /**
+   *
+   * @return the day
+   */
   public int getDay()
   {
     return day;
   }
 
+  /**
+   *
+   * @return the year
+   */
   public int getYear()
   {
     return year;
   }
 
+  /**
+   * Returns the date details encoded in a String.
+   *
+   * @return String representation of Date details
+   */
   public String toString()
   {
     return (month + " " + day + ", " + year);
   }
 
+  /**
+   *
+   * @param otherDate Date object used for comparison
+   * @return Boolean indicating equality of two Dates
+   */
   public boolean equals(Date otherDate)
   {
     if (otherDate == null)
@@ -194,6 +270,11 @@ public class Date
     }
   }
 
+  /**
+   *
+   * @param otherDate Date object used for comparison
+   * @return Boolean indicating if a Date precedes another Date
+   */
   public boolean precedes(Date otherDate)
   {
     return ((year < otherDate.year)
@@ -202,6 +283,10 @@ public class Date
             && day < otherDate.day));
   }
 
+  /**
+   * Read input from the user.
+   *
+   */
   public void readInput()
   {
     boolean tryAgain = true;
