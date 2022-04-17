@@ -50,8 +50,8 @@ public class Chapter4Problem6
     record.calculateLetterGrade();
 
     System.out.println("Student Record: " + record.getScores()
-            + " Overall numeric grade: " + gradeFormat.format(record.getTotalScore())
-            + " Letter Grade: " + record.getLetterGrade()
+            + "  Overall numeric grade: " + gradeFormat.format(record.getTotalScore())
+            + ", Letter Grade: " + record.getLetterGrade()
     );
   }
 
