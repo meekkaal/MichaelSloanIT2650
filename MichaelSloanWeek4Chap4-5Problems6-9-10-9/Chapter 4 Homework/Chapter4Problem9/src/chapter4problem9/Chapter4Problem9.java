@@ -3,7 +3,7 @@
  * Instructor: Martin P. Walsh
  * Student Name: Michael Sloan
  * Homework Assignment: Chap 4 - Problem 9
- * Purpose of Assignment: Test program for a species record class.
+ * Purpose of Assignment: Driver program for a species record class.
  */
 package chapter4problem9;
 
