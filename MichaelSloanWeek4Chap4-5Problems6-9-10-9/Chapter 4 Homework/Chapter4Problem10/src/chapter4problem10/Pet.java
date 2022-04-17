@@ -1,15 +1,11 @@
 package chapter4problem10;
 
-import java.text.DecimalFormat;
-
 /**
  *
  * @author Michael Sloan
  */
 public class Pet
 {
-  
-  DecimalFormat dose = new DecimalFormat("0.0000");
 
   private String name;
   private int age;//in years
@@ -20,9 +16,7 @@ public class Pet
   public String toString()
   {
     return ("Type: " + animalType + " Name: " + name + " Age: " + age
-            + " years" + "\nWeight: " + weight + " pounds"
-            + "\nDose of carprofen: " + dose.format(carprofen())
-            + "\nDose of acepromazine: " + dose.format(acepromazine()));
+            + " years" + "\nWeight: " + weight + " pounds");
   }
 
   public Pet(String initialName, int initialAge,
