@@ -22,6 +22,12 @@ public class StudentProjectPartA
     System.out.println("Do While loop average elapsed time: ");
     System.out.println("For loop average elapsed time: ");
     
+    
+    
+  }
+  private static void whileLoop()
+  {
+    
   }
   
 }
