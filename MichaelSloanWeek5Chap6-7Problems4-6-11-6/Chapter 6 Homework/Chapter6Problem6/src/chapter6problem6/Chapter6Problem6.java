@@ -7,6 +7,8 @@
  */
 package chapter6problem6;
 
+import java.util.Scanner;
+
 /**
  *
  * @author Michael Sloan
@@ -24,6 +26,14 @@ public class Chapter6Problem6
     System.out.println("Homework Assignment: Chapter 6, Problem 6");
     System.out.println("_________________________________");
     System.out.println("");
+    
+    Scanner keyboard = new Scanner(System.in);
+    int[] numberArray = new int[50];
+    
+    System.out.println("How many numbers to enter? (At most 50)");
+    int amount = keyboard.nextInt();
+    System.out.println("Enter each of the " + amount + " numbers. Please put a space between each number.");
+    
   }
   
 }
