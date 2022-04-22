@@ -3,7 +3,7 @@
  * Instructor: Martin P. Walsh
  * Student Name: Michael Sloan
  * Homework Assignment: Chap 6 - Problem 6
- * Purpose of Assignment:
+ * Purpose of Assignment: Read multiple numbers into an array then count the occurrences of each.
  */
 package chapter6problem6;
 
