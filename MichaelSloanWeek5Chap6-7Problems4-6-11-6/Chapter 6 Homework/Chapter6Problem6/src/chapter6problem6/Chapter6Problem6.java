@@ -41,6 +41,7 @@ public class Chapter6Problem6
     }
 
     System.out.printf("%-15s%-15s %n", "N", "Count");
+    
     Arrays.sort(numberArray);
     int count = 1;
 
@@ -51,18 +52,10 @@ public class Chapter6Problem6
         count++;
       } else
       {
-        if (count <= 1)
-        {
-          System.out.printf("%-15s%-15s %n", numberArray[i], count);
-        } else
-        {
-          System.out.printf("%-15s%-15s %n", numberArray[i], count);
-          count = 1;
-        }
-
+        System.out.printf("%-15s%-15s %n", numberArray[i], count);
+        count = 1;
       }
     }
-
   }
 
 }
