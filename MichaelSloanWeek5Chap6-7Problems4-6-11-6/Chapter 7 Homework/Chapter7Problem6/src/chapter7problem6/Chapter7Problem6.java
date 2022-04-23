@@ -3,7 +3,7 @@
  * Instructor: Martin P. Walsh
  * Student Name: Michael Sloan
  * Homework Assignment: Chap 7 - Problem 6
- * Purpose of Assignment:
+ * Purpose of Assignment: Test methods of Vehicle, Truck, and Person classes. Truck extends the Vehicle class.
  */
 package chapter7problem6;
 
@@ -24,6 +24,8 @@ public class Chapter7Problem6
     System.out.println("Homework Assignment: Chapter 7, Problem 6");
     System.out.println("_________________________________");
     System.out.println("");
+    
+    
   }
   
 }
