@@ -33,9 +33,28 @@ public class Person
   {
     return (name);
   }
+
+  /**
+   *
+   * @param other
+   * @return
+   */
+  @Override
   public boolean equals (Object other)
   {
-    return true;
+    if (other == null)
+    {
+      return false;
+    }
+    else if (getClass() != other.getClass())
+    {
+      return false;
+    }
+    else
+    {
+      Person otherPerson = (Person)other;
+      return (name.equals(otherPerson.name));
+    }
   }
   
 }
