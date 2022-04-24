@@ -45,27 +45,19 @@ public class Chapter6Problem11
 
     String seatNumber = " ";
 
-    // print seating pattern and put an X in the seatNumber location
     while (filledSeats < 28 && seatNumber.length() > 0)
     {
-      System.out.println("Enter seat to assign (e.g., '1A')," + "or q to quit.");
-      seatNumber = keyboard.nextLine();
-      if (seatNumber.equals("q"))
+      System.out.println("Please enter seat number or Q to quit.");
+      seatNumber = keyboard.nextLine().toUpperCase();
+      if (seatNumber.toUpperCase().equals("Q"))
       {
-        System.out.println("Program ended.");
         System.exit(0);
       }
       int row = seatNumber.charAt(0) - '1';
       int col = seatNumber.charAt(1) - 'A';
       if (row < 0 || row > 7 || col < 0 || col > 4)
       {
-        System.out.println("Input error. Enter seat to assign (e.g., '1A')," + "or q to quit.");
-        seatNumber = keyboard.nextLine();
-        if (seatNumber.equals("q"))
-        {
-          System.out.println("Program ended.");
-          System.exit(0);
-        }
+        break;
       } else
       {
         if (seats[row][col] != 'X')
@@ -73,10 +65,13 @@ public class Chapter6Problem11
           seats[row][col] = 'X';
           filledSeats++;
           printSeats(seats);
+        } else
+        {
+          printSeats(seats);
+          System.out.println("That seat is already taken.");
         }
       }
     }
-
   }
 
   private static void printSeats(char[][] seats)
@@ -85,8 +80,6 @@ public class Chapter6Problem11
     {
       System.out.println((i + 1) + "  " + seats[i][0] + seats[i][1] + " " + seats[i][2] + seats[i][3]);
     }
-    int numberOfSeatsAvailable = (28 - filledSeats);
-    System.out.println("There are " + numberOfSeatsAvailable + " seats available.");
   }
 
 }
