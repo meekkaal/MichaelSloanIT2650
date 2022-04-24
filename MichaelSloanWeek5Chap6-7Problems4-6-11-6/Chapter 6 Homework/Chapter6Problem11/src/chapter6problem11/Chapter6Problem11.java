@@ -42,9 +42,11 @@ public class Chapter6Problem11
       seats[i][3] = 'D';
     }
     printSeats(seats);
+    
+    System.out.println("You will input the seat selection using the row number and then the seat letter (ex - 3B)");
 
     String seatNumber = " ";
-
+    
     while (filledSeats < 28 && seatNumber.length() > 0)
     {
       System.out.println("Please enter seat number or Q to quit.");
@@ -80,6 +82,7 @@ public class Chapter6Problem11
     {
       System.out.println((i + 1) + "  " + seats[i][0] + seats[i][1] + " " + seats[i][2] + seats[i][3]);
     }
+    System.out.println();
   }
 
 }
