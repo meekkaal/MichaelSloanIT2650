@@ -26,6 +26,18 @@ public class Chapter7Problem6
     System.out.println("");
     
     
+    // test person 1
+    Person p1 = new Person();
+    System.out.println("p1: " + p1);
+    p1.setName("Bob");
+    System.out.println("p1's name is: " + p1.getName());
+    
+    // test person 2
+    Person p2 = new Person("Joe");
+    System.out.println("p2: " + p2);
+    
+    
+    
   }
   
 }
