@@ -36,7 +36,7 @@ public class Chapter7Problem6
     Person p2 = new Person("Joe");
     System.out.println("p2: " + p2);
     
-    // test person 3 equals person 1
+    // test person 3 and person equals methods
     Person p3 = new Person("Bob");
     System.out.println("p3 equal to p1: " + p3.equals(p1));
     System.out.println("p2 equal to p1:  " + p2.equals(p1));
@@ -55,7 +55,7 @@ public class Chapter7Problem6
     Vehicle v2 = new Vehicle("Chevy", 4, new Person("Betty"));
     System.out.println("v2: " + v2);
     
-    //test vehicle 3
+    //test vehicle 3 and vehicle equals methods
     Vehicle v3 = new Vehicle(v1);
     System.out.println("v3 equal to v1: " + v3.equals(v1));
     System.out.println("v2 equal to v1: " + v2.equals(v1));
@@ -72,6 +72,7 @@ public class Chapter7Problem6
     Truck t2 = new Truck("Chevy", 4, v2.getOwner(), 34.5, 65);
     System.out.println("t2: " + t2);
     
+    //test truck 3 and truck equals methods
     Truck t3 = new Truck(t1);
     System.out.println("t3 equal to t1: " + t3.equals(t1));
     System.out.println("v2 equal to t1: " + v2.equals(t1));
