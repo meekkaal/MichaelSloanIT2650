@@ -1,6 +1,7 @@
 package chapter7problem6;
 
 /**
+ * This is a Vehicle class.
  *
  * @author Michael Sloan
  */
@@ -11,6 +12,7 @@ public class Vehicle
   private Person owner;
 
   /**
+   * Default constructor.
    *
    */
   public Vehicle()
@@ -22,9 +24,9 @@ public class Vehicle
   
   /**
    *
-   * @param manufacturerName
-   * @param cylinders
-   * @param owner
+   * @param manufacturerName String name of manufacturer.
+   * @param cylinders Int amount of cylinders.
+   * @param owner Person owner of the vehicle.
    */
   public Vehicle(String manufacturerName, int cylinders, Person owner)
   {
@@ -35,8 +37,8 @@ public class Vehicle
 
   /**
    *
-   * @param manufacturerName
-   * @param cylinders
+   * @param manufacturerName String name of manufacturer.
+   * @param cylinders Int amount of cylinders.
    */
   public Vehicle(String manufacturerName, int cylinders)
   {
@@ -45,8 +47,9 @@ public class Vehicle
   }
   
   /**
-   *
-   * @param vehicle
+   * Copy constructor.
+   * 
+   * @param vehicle Another Vehicle object.
    */
   public Vehicle(Vehicle vehicle)
   {
@@ -57,7 +60,7 @@ public class Vehicle
 
   /**
    *
-   * @return
+   * @return String name of manufacturer.
    */
   public String getManufacturerName()
   {
@@ -66,7 +69,7 @@ public class Vehicle
 
   /**
    *
-   * @param manufacturerName
+   * @param manufacturerName String name of manufacturer.
    */
   public void setManufacturerName(String manufacturerName)
   {
@@ -75,7 +78,7 @@ public class Vehicle
 
   /**
    *
-   * @return
+   * @return Int amount of cylinders.
    */
   public int getCylinders()
   {
@@ -84,7 +87,7 @@ public class Vehicle
 
   /**
    *
-   * @param cylinders
+   * @param cylinders Int amount of cylinders.
    */
   public void setCylinders(int cylinders)
   {
@@ -93,7 +96,7 @@ public class Vehicle
 
   /**
    *
-   * @return
+   * @return Person owner of the vehicle.
    */
   public Person getOwner()
   {
@@ -102,7 +105,7 @@ public class Vehicle
 
   /**
    *
-   * @param owner
+   * @param owner Person owner of the vehicle.
    */
   public void setOwner(Person owner)
   {
@@ -111,7 +114,7 @@ public class Vehicle
 
   /**
    *
-   * @return
+   * @return String representation of the vehicle.
    */
   public String toString()
   {
@@ -120,8 +123,8 @@ public class Vehicle
 
   /**
    *
-   * @param other
-   * @return
+   * @param other Other object for comparison
+   * @return Boolean indicating equality of the objects.
    */
   public boolean equals(Object other)
   {

@@ -8,6 +8,7 @@
 package chapter7problem6;
 
 /**
+ * This is a Chapter7Problem6 class.
  *
  * @author Michael Sloan
  */
