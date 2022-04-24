@@ -59,9 +59,7 @@ public class Chapter6Problem4
     System.out.println("Example 1");
     System.out.println("Original array values: " + Arrays.toString(example1));
     System.out.print("Revised array values after repeates removed: ");
-    int size = example1.length;
-    size = deleteRepeats(example1, size);
-    for (int i = 0; i < size; i++)
+    for (int i = 0; i < deleteRepeats(example1, example1.length); i++)
     {
       System.out.print(example1[i] + ", ");
     }
@@ -117,7 +115,6 @@ public class Chapter6Problem4
 
   private static int deleteRepeats(char[] a, int newSize)
   {
-
     for (int i = 0; i < newSize; i++)
     {
       boolean duplicate = false;
@@ -127,19 +124,18 @@ public class Chapter6Problem4
         {
           duplicate = true;
           break;
-        }        
+        }
       }
       if (duplicate)
       {
-        for (int j = i+1; j < newSize; j++)
+        for (int j = i + 1; j < newSize; j++)
         {
-          a[j-1] = a[j];
+          a[j - 1] = a[j];
         }
         newSize--;
         i--;
       }
     }
-
     return newSize;
   }
 
