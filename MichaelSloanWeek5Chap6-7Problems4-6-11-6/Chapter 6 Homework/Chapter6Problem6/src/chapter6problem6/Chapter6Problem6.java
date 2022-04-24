@@ -41,7 +41,7 @@ public class Chapter6Problem6
     }
 
     System.out.printf("%-15s%-15s %n", "N", "Count");
-    
+
     Arrays.sort(numberArray);
     int count = 1;
 
