@@ -53,16 +53,16 @@ public class Chapter9Problem1
         {
           done = true;
         }
-      }
-      catch (NegativeArraySizeException e)
+      } catch (NegativeArraySizeException e)
       {
         System.out.println("Number must be greater than 0.");
+      } catch (Exception e)
+      {
+        System.out.println("Invalid input, please try again.");
+        keyboard.nextLine();
       }
-
     }
-    
     System.exit(0);
-
   }
 
 }
