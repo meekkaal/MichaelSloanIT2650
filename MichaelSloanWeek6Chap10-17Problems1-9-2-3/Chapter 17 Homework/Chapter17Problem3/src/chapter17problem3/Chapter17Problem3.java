@@ -1,6 +1,9 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ * IT-2650 Java Programming, Spring 2022
+ * Instructor: Martin P. Walsh
+ * Student Name: Michael Sloan
+ * Homework Assignment: Chap 17 - Problem 3
+ * Purpose of Assignment:
  */
 package chapter17problem3;
 
@@ -10,7 +13,7 @@ import java.util.Scanner;
 
 /**
  *
- * @author torna
+ * @author Michael Sloan
  */
 public class Chapter17Problem3
 {
