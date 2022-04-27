@@ -29,53 +29,47 @@ public class Chapter10Problem9
     System.out.println("_________________________________");
     System.out.println("");
 
-    int[] numbers = new int[100];
     int counter = 0;
     double sum = 0;
-    
+    int largestNumber = Integer.MIN_VALUE;
+    int smallestNumber = Integer.MAX_VALUE;
+
     try
     {
       ObjectInputStream inputStream = new ObjectInputStream(new FileInputStream("./chapter10numbers.dat"));
-      
+
       try
       {
         System.out.println("Number");
         while (true)
         {
           int foundNumber = inputStream.readInt();
-          numbers[counter++] = foundNumber;
           System.out.println(foundNumber);
           sum += foundNumber;
+          counter++;
+          
+          if (foundNumber > largestNumber)
+          {
+            largestNumber = foundNumber;
+          }
+          else if (foundNumber < smallestNumber)
+          {
+            smallestNumber = foundNumber;
+          }
         }
-      }
-      catch (EOFException e)
+      } catch (EOFException e)
       {
         System.out.println();
       }
-      
-      int largestNumber = Integer.MIN_VALUE;
-      int smallestNumber = Integer.MAX_VALUE;
-      
-      for (int i = 0; i < counter; i++)
-      {
-        if (numbers[i] > largestNumber)
-        {
-          largestNumber = numbers[i];
-        }
-        else if (numbers[i] < smallestNumber)
-        {
-          smallestNumber = numbers[i];
-        }
-      }
-      
-      
+
       System.out.printf("%-16s %-10s%n", "Grand Total:", sum);
       System.out.printf("%-16s %-10s%n", "Count:", counter);
       System.out.printf("%-16s %-10s%n", "Average:", sum / counter);
       System.out.printf("%-16s %-10s%n", "Smallest number:", smallestNumber);
-      System.out.printf("%-16s %-10s%n", "Largest number:", largestNumber);
-    }
-    catch (Exception e)
+      System.out.printf("%-16s %-10s%n", "Largest number:", largestNumber);   
+      inputStream.close();
+      
+    } catch (Exception e)
     {
       System.out.println(e);
     }
