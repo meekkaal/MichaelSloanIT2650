@@ -3,7 +3,7 @@
  * Instructor: Martin P. Walsh
  * Student Name: Michael Sloan
  * Homework Assignment: Chap 10 - Problem 9
- * Purpose of Assignment:
+ * Purpose of Assignment: Read numbers from a binary file and display statistics about them.
  */
 package chapter10problem9;
 
