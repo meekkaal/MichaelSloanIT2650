@@ -3,7 +3,7 @@
  * Instructor: Martin P. Walsh
  * Student Name: Michael Sloan
  * Homework Assignment: Chap 10 - Problem 1
- * Purpose of Assignment:
+ * Purpose of Assignment: Read two text files containing names into memory then prompt the user for a name to search.
  */
 package chapter10problem1;
 
