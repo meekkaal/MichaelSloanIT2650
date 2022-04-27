@@ -9,7 +9,7 @@ package chapter17problem2;
 
 /**
  *
- * @author torna
+ * @author Michael Sloan
  */
 public class Chapter17Problem2
 {
