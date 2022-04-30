@@ -3,7 +3,7 @@
  * Instructor: Martin P. Walsh
  * Student Name: Michael Sloan
  * Homework Assignment: Chap 17 - Problem 2
- * Purpose of Assignment:
+ * Purpose of Assignment: Create a tic-tac-toe game using Swing.
  */
 package chapter17problem2;
 
