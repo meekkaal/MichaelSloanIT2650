@@ -189,8 +189,6 @@ public class Chapter17Problem3 extends JFrame implements ActionListener
             }
           }
         }
-        
-
       }
       case "Reset" ->
       {
