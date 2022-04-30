@@ -122,7 +122,7 @@ public class Chapter17Problem3 extends JFrame implements ActionListener
 
       buttonPanel.add(buttons[i]);
     }
-    
+
     add(buttonPanel, BorderLayout.CENTER);
   }
 
@@ -166,6 +166,10 @@ public class Chapter17Problem3 extends JFrame implements ActionListener
       }
       case "=" ->
       {
+        if (!buildingOperand)
+        {
+          result = stringToDouble(resultField.getText());
+        }
         if (operation.equals("+"))
         {
           result += operandValue;
@@ -182,7 +186,7 @@ public class Chapter17Problem3 extends JFrame implements ActionListener
         {
           try
           {
-            if (operandValue == 0)
+            if (-1.0e-10 < operandValue && operandValue < +1.0e-10)
             {
               throw new DivisionByZeroException();
             }
@@ -221,7 +225,6 @@ public class Chapter17Problem3 extends JFrame implements ActionListener
     {
       result = operandValue;
     }
-
   }
 
   private static double stringToDouble(String value)
