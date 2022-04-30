@@ -37,9 +37,10 @@ public class Chapter17Problem3 extends JFrame implements ActionListener
   public static final int HEIGHT = 400;
   public static final int NUMBER_OF_DIGITS = 34;
 
-  private JTextField resultField;
-  private JTextField operandField;
+  private final JTextField resultField;
+  private final JTextField operandField;
   private double result = 0.0;
+  boolean buildingOperand = true;
 
   JButton[] buttons = new JButton[16];
 
@@ -121,103 +122,114 @@ public class Chapter17Problem3 extends JFrame implements ActionListener
 
       buttonPanel.add(buttons[i]);
     }
-
+    
     add(buttonPanel, BorderLayout.CENTER);
   }
 
+  @Override
   public void actionPerformed(ActionEvent e)
   {
+    String action = e.getActionCommand();
+    double operandValue = stringToDouble(operandField.getText());
 
-      assumingCorrectNumberFormats(e);
-
-  }
-
-  public void assumingCorrectNumberFormats(ActionEvent e)
-  {
-    String actionCommand = e.getActionCommand();
-
-    switch (actionCommand)
+    switch (action)
     {
-      case "+" ->
-        operation = "+";
-      case "-" ->
-        operation = "-";
-      case "X" ->
-        operation = "X";
-      case "/" ->
-        operation = "/";
-      case "=" ->
-      {
-        switch (operation)
-        {
-          case "+" ->
-          {
-            result = stringToDouble(resultField.getText()) + stringToDouble(operandField.getText());
-            resultField.setText(Double.toString(result));
-            operandField.setText("");
-          }
-          case "-" ->
-          {
-            result = stringToDouble(resultField.getText()) - stringToDouble(operandField.getText());
-            resultField.setText(Double.toString(result));
-            operandField.setText("");
-          }
-          case "X" ->
-          {
-            result = stringToDouble(resultField.getText()) * stringToDouble(operandField.getText());
-            resultField.setText(Double.toString(result));
-            operandField.setText("");
-          }
-          case "/" ->
-          {
-            double operandValue = stringToDouble(operandField.getText());
-            try
-            {
-              if (-1.0e-10 < operandValue && operandValue < +1.0e-10)
-              {
-                throw new DivisionByZeroException();
-              } else
-              {
-                result = stringToDouble(resultField.getText()) / stringToDouble(operandField.getText());
-                resultField.setText(Double.toString(result));
-                operandField.setText("");
-              }
-
-            } catch (DivisionByZeroException zeroException)
-            {
-              operandField.setText(zeroException.getMessage());
-            }
-          }
-        }
-      }
       case "Reset" ->
       {
         result = 0.0;
-        resultField.setText("0.0");
         operation = "";
+        resultField.setText("0.0");
       }
       case "Clear" ->
       {
         operandField.setText("");
       }
+      case "+" ->
+      {
+        operation = "+";
+        buildingOperand = false;
+      }
+      case "-" ->
+      {
+        operation = "-";
+        buildingOperand = false;
+      }
+      case "X" ->
+      {
+        operation = "X";
+        buildingOperand = false;
+      }
+      case "/" ->
+      {
+        operation = "/";
+        buildingOperand = false;
+      }
+      case "=" ->
+      {
+        if (operation.equals("+"))
+        {
+          result += operandValue;
+        }
+        if (operation.equals("-"))
+        {
+          result -= operandValue;
+        }
+        if (operation.equals("X"))
+        {
+          result *= operandValue;
+        }
+        if (operation.equals("/"))
+        {
+          try
+          {
+            if (operandValue == 0)
+            {
+              throw new DivisionByZeroException();
+            }
+            result /= operandValue;
+          } catch (DivisionByZeroException zeroException)
+          {
+            operandField.setText(zeroException.getMessage());
+            buildingOperand = false;
+            break;
+          }
+        }
+        resultField.setText(Double.toString(result));
+        operandField.setText("");
+        buildingOperand = false;
+      }
       default ->
       {
-        if (operation.equals("") && resultField.getText().equals("0.0"))
+        if (buildingOperand)
         {
-          operandField.setText(operandField.getText() + actionCommand);
+          operandField.setText(operandField.getText() + action);
         } else
         {
-          resultField.setText(operandField.getText());
-          operandField.setText(actionCommand);
+          if (operandField.getText().isBlank() || operandField.getText().equals("Division by Zero"))
+          {
+            resultField.setText("0.0");
+          } else
+          {
+            resultField.setText(operandField.getText());
+          }
+          operandField.setText(action);
+          buildingOperand = true;
         }
-
       }
-
     }
+    if (!buildingOperand)
+    {
+      result = operandValue;
+    }
+
   }
 
-  private static double stringToDouble(String stringObject)
+  private static double stringToDouble(String value)
   {
-    return Double.parseDouble(stringObject.trim());
+    if (value.equals("Division by Zero"))
+    {
+      return 0;
+    }
+    return value == null || value.isEmpty() ? Double.NaN : Double.parseDouble(value);
   }
 }
