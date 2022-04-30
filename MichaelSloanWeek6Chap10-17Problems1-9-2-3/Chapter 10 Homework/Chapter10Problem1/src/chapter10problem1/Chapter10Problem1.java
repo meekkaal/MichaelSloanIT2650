@@ -96,7 +96,6 @@ public class Chapter10Problem1
       System.out.println(name + " is not ranked among the top 1000 boy names");
     }
     
-    
     boyNameInputStream.close();
     girlNameInputStream.close();
   }
