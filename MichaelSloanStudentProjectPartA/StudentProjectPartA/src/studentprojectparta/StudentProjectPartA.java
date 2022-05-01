@@ -1,3 +1,10 @@
+/*
+ * IT-2650 Java Programming, Spring 2022
+ * Instructor: Martin P. Walsh
+ * Student Name: Michael Sloan
+ * Homework Assignment: Student Project Part A
+ * Purpose of Assignment: Desktop Loop Comparison Console Application – Which Loop structure is the fastest?
+ */
 package studentprojectparta;
 
 import java.text.DecimalFormat;
@@ -16,6 +23,12 @@ public class StudentProjectPartA
    */
   public static void main(String[] args)
   {
+    System.out.println("IT-2650 Java Programming");
+    System.out.println("Student Name: Michael Sloan");
+    System.out.println("Homework Assignment: Student Project Part A");
+    System.out.println("_________________________________");
+    System.out.println("");
+    
     DecimalFormat format = new DecimalFormat("0.0000");
 
     System.out.println("Average Elapsed Time for 10,000,000 loops in seconds");
@@ -29,20 +42,21 @@ public class StudentProjectPartA
     double forLoop = forLoop();
     System.out.println("For loop average elapsed time: " + format.format(forLoop) + " seconds");
 
+    System.out.println();
     System.out.print("Fastest average time is: ");
     if (whileLoop < doWhileLoop && whileLoop < forLoop)
     {
-      System.out.println(format.format(whileLoop) + " seconds");
+      System.out.println("While Loop " + format.format(whileLoop) + " seconds");
     } else
     {
       if (doWhileLoop < whileLoop && doWhileLoop < forLoop)
       {
-        System.out.println(format.format(doWhileLoop) + " seconds");
+        System.out.println("Do While Loop " + format.format(doWhileLoop) + " seconds");
       } else
       {
         if (forLoop < whileLoop && forLoop < doWhileLoop)
         {
-          System.out.println(format.format(forLoop) + " seconds");
+          System.out.println("For Loop " + format.format(forLoop) + " seconds");
         }
       }
     }
