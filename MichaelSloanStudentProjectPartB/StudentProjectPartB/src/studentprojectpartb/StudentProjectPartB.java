@@ -7,9 +7,6 @@
  */
 package studentprojectpartb;
 
-import java.awt.BorderLayout;
-import java.awt.Color;
-import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
@@ -19,15 +16,11 @@ import java.time.Duration;
 import java.time.Instant;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
-import javax.swing.Box;
-import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import javax.swing.JTextField;
-import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
 /**
@@ -50,11 +43,11 @@ public class StudentProjectPartB extends JFrame implements ActionListener
   JLabel doWhileElapsed = new JLabel();
   JLabel whileElapsed = new JLabel();
   JLabel forElapsed = new JLabel();
-  
-  DecimalFormat formatter = new DecimalFormat("0.0000");
-  
+
+  DecimalFormat formatter = new DecimalFormat("0.000000000");
+
   DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("hh:mm:ss a")
-            .withZone(ZoneId.systemDefault());
+          .withZone(ZoneId.systemDefault());
 
   /**
    * @param args the command line arguments
@@ -66,8 +59,6 @@ public class StudentProjectPartB extends JFrame implements ActionListener
     System.out.println("Homework Assignment: Student Project Part B");
     System.out.println("_________________________________");
     System.out.println("");
-    
-    
 
     StudentProjectPartB gui = new StudentProjectPartB();
     gui.setVisible(true);
@@ -110,7 +101,7 @@ public class StudentProjectPartB extends JFrame implements ActionListener
     JPanel completedPanel = new JPanel();
     completedPanel.setLayout(new GridLayout(1, 3));
     add(completedPanel);
-    JLabel completedLoops = new JLabel("Completed Loops");  
+    JLabel completedLoops = new JLabel("Completed Loops");
     completedPanel.add(completedLoops);
     completedPanel.add(completedLoopsActual);
     completedPanel.add(new JLabel());
@@ -183,19 +174,20 @@ public class StudentProjectPartB extends JFrame implements ActionListener
       while (intCounter < 10000001)
       {
         dblSquared = Math.pow(intCounter, 2);
-        dblLog = Math.log10(intCounter);        
+        dblLog = Math.log10(intCounter);
         intCounter++;
         intLoops++;
       }
-      completedLoopsActual.setText(Integer.toString(intCounter - 1));
-      Instant endTime = Instant.now();   
-      whileCounter[i] = Duration.between(startTime, endTime).toMillis();
+     
+      Instant endTime = Instant.now();
+      whileCounter[i] = Duration.between(startTime, endTime).toNanos();
       sum = sum + whileCounter[i];
       intCounter = 1;
     }
+    completedLoopsActual.setText(Integer.toString(intLoops));
     Instant endTime = Instant.now();
     endTimeActual.setText(timeFormatter.format(endTime));
-    String result = formatter.format((sum / whileCounter.length) / 1000.0);
+    String result = formatter.format((sum / whileCounter.length) / 1E9);
     elapsedTimeActual.setText(result);
     whileElapsed.setText(result);
   }
@@ -218,20 +210,20 @@ public class StudentProjectPartB extends JFrame implements ActionListener
       startTimeActual.setText(timeFormatter.format(startTime));
       do
       {
-        ++intCounter;
-        ++intLoops;
         dblSquared = Math.pow(intCounter, 2);
         dblLog = Math.log10(intCounter);
+        intCounter++;
+        intLoops++;
       } while (intCounter <= 10000000);
       Instant endTime = Instant.now();
-      doWhileCounter[i] = Duration.between(startTime, endTime).toMillis();
+      doWhileCounter[i] = Duration.between(startTime, endTime).toNanos();
       sum = sum + doWhileCounter[i];
       intCounter = 1;
     }
+    completedLoopsActual.setText(Integer.toString(intLoops));
     Instant endTime = Instant.now();
     endTimeActual.setText(timeFormatter.format(endTime));
-
-    String result = formatter.format((sum / doWhileCounter.length) / 1000.0);
+    String result = formatter.format((sum / doWhileCounter.length) / 1E9);
     elapsedTimeActual.setText(result);
     doWhileElapsed.setText(result);
   }
@@ -256,13 +248,13 @@ public class StudentProjectPartB extends JFrame implements ActionListener
         dblLog = Math.log10(intLoops);
       }
       Instant endTime = Instant.now();
-      forCounter[i] = Duration.between(startTime, endTime).toMillis();
+      forCounter[i] = Duration.between(startTime, endTime).toNanos();
       sum = sum + forCounter[i];
     }
+    completedLoopsActual.setText(Integer.toString(intLoops));
     Instant endTime = Instant.now();
     endTimeActual.setText(timeFormatter.format(endTime));
-    
-    String result = formatter.format((sum / forCounter.length) / 1000.0);
+    String result = formatter.format((sum / forCounter.length) / 1E9);
     elapsedTimeActual.setText(result);
     forElapsed.setText(result);
   }
@@ -276,7 +268,7 @@ public class StudentProjectPartB extends JFrame implements ActionListener
     whileElapsed.setText("");
     doWhileElapsed.setText("");
     forElapsed.setText("");
-   
+
   }
 
 }
