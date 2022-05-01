@@ -35,32 +35,31 @@ public class StudentProjectPartA
     System.out.println("___________________________");
     System.out.println();
 
-    double whileLoop = whileLoop();
-    System.out.println("While loop average elapsed time: " + format.format(whileLoop) + " seconds");
-    double doWhileLoop = doWhileLoop();
-    System.out.println("Do While loop average elapsed time: " + format.format(doWhileLoop) + " seconds");
-    double forLoop = forLoop();
-    System.out.println("For loop average elapsed time: " + format.format(forLoop) + " seconds");
+    double whileLoopAverage = whileLoop();
+    System.out.println("While loop average elapsed time: " + format.format(whileLoopAverage) + " seconds");
+    double doWhileLoopAverage = doWhileLoop();
+    System.out.println("Do While loop average elapsed time: " + format.format(doWhileLoopAverage) + " seconds");
+    double forLoopAverage = forLoop();
+    System.out.println("For loop average elapsed time: " + format.format(forLoopAverage) + " seconds");
 
     System.out.println();
     System.out.print("Fastest average time is: ");
-    if (whileLoop < doWhileLoop && whileLoop < forLoop)
+    if (whileLoopAverage < doWhileLoopAverage && whileLoopAverage < forLoopAverage)
     {
-      System.out.println("While Loop " + format.format(whileLoop) + " seconds");
+      System.out.println("While Loop " + format.format(whileLoopAverage) + " seconds");
     } else
     {
-      if (doWhileLoop < whileLoop && doWhileLoop < forLoop)
+      if (doWhileLoopAverage < whileLoopAverage && doWhileLoopAverage < forLoopAverage)
       {
-        System.out.println("Do While Loop " + format.format(doWhileLoop) + " seconds");
+        System.out.println("Do While Loop " + format.format(doWhileLoopAverage) + " seconds");
       } else
       {
-        if (forLoop < whileLoop && forLoop < doWhileLoop)
+        if (forLoopAverage < whileLoopAverage && forLoopAverage < doWhileLoopAverage)
         {
-          System.out.println("For Loop " + format.format(forLoop) + " seconds");
+          System.out.println("For Loop " + format.format(forLoopAverage) + " seconds");
         }
       }
     }
-
   }
 
   private static Double whileLoop()
@@ -78,10 +77,10 @@ public class StudentProjectPartA
       Instant startTime = Instant.now();
       while (intCounter < 10000001)
       {
-        ++intCounter;
-        ++intLoops;
         dblSquared = Math.pow(intCounter, 2);
         dblLog = Math.log10(intCounter);
+        intCounter++;
+        intLoops++;
       }
       Instant endTime = Instant.now();
       whileCounter[i] = Duration.between(startTime, endTime).toMillis();
@@ -108,10 +107,10 @@ public class StudentProjectPartA
       Instant startTime = Instant.now();
       do
       {
-        ++intCounter;
-        ++intLoops;
         dblSquared = Math.pow(intCounter, 2);
         dblLog = Math.log10(intCounter);
+        intCounter++;
+        intLoops++;
       } while (intCounter <= 10000000);
       Instant endTime = Instant.now();
       doWhileCounter[i] = Duration.between(startTime, endTime).toMillis();
