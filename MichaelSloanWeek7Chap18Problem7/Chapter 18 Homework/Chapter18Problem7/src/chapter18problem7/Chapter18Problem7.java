@@ -3,7 +3,7 @@
  * Instructor: Martin P. Walsh
  * Student Name: Michael Sloan
  * Homework Assignment: Chap 18 - Problem 7
- * Purpose of Assignment:
+ * Purpose of Assignment: Use Swing + MouseListener to create an application that marks and logs where a user clicks.
  */
 package chapter18problem7;
 
@@ -25,7 +25,8 @@ public class Chapter18Problem7
     System.out.println("_________________________________");
     System.out.println("");
     
-    
+    MouseDemoFrame gui = new MouseDemoFrame();
+    gui.setVisible(true);
   }
   
 }
