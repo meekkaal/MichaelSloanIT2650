@@ -22,7 +22,6 @@ import javax.swing.JFrame;
  */
 public class Chapter18Problem7
 {
-  
 
   /**
    * @param args the command line arguments
@@ -42,8 +41,10 @@ public class Chapter18Problem7
 
 class MouseDemo extends JFrame implements MouseListener
 {
-  private List<Point> points = new ArrayList<>();
 
+  private final List<Point> points = new ArrayList<>();
+
+  @Override
   public void mouseClicked(MouseEvent e)
   {
     points.add(e.getPoint());
@@ -70,7 +71,7 @@ class MouseDemo extends JFrame implements MouseListener
   public void mouseExited(MouseEvent e)
   {
   }
-  
+
   @Override
   public void paint(Graphics g)
   {
@@ -78,7 +79,7 @@ class MouseDemo extends JFrame implements MouseListener
     g.setColor(Color.BLUE);
     for (Point point : points)
     {
-      // center the drawn circle over the mouse click
+      // center the drawn circle over the mouse click by offsetting half the diameter of the bounding box
       g.fillOval(point.x - 8, point.y - 8, 16, 16);
     }
   }
